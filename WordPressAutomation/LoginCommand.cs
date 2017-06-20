@@ -17,6 +17,9 @@ namespace WordPressAutomation
             this.username = username;
         }
 
+        /**
+         * set password user will login with
+         */
         public LoginCommand WithPassword(string password)
         {
             this.password = password;
@@ -24,6 +27,10 @@ namespace WordPressAutomation
             
         }
 
+        /**
+         * handles login related functionality
+         *
+         */
         public void Login()
         {
             var loginInput = Driver.Instance.FindElement(By.Id("user_login"));
