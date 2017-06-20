@@ -10,20 +10,26 @@ namespace WordPressAutomation
 {
     public class Driver
     {
+        // return driver singleton
         public static IWebDriver Instance
         {
             get; set;
         }
 
+        // setup driver 
         public static void Initialize()
         {
+            // use firefox browser
             Instance = new FirefoxDriver();
 
+            // wait 5 seconds 
             Instance.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
         }
 
-        public static void CleanUp()
+        // close driver when done with it
+        public static void Close()
         {
+            // close driver
             Instance.Close();
         }
     }

@@ -47,6 +47,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DashBoardPage.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="LoginCommand.cs" />
     <Compile Include="LoginPage.cs" />

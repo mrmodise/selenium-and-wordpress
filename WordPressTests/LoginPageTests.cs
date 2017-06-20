@@ -27,13 +27,13 @@ namespace WordPressTests
                 .Login();
 
             // check if are able to login
-            //Assert.IsTrue(DashBoardPage.IsAt, "Failed to login");
+            Assert.IsTrue(DashBoardPage.IsAt, "Failed to login");
         }
 
         [TestCleanup]
         public void CleanUp()
         {
-            Driver.CleanUp();
+           Driver.Close();
         }
     }
 }
