@@ -21,5 +21,10 @@ namespace WordPressAutomation
 
             Instance.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
         }
+
+        public static void CleanUp()
+        {
+            Instance.Close();
+        }
     }
 }

@@ -16,21 +16,24 @@ namespace WordPressTests
         [TestMethod]
         public void Admin_User_Can_Login()
         {
+            // navigate to site under automation
             LoginPage
                 .GoTo();
 
+            // test the login functionality
             LoginPage
-                .LoginAs("admin")
-                .WithPassword("admin")
+                .LoginAs("selenium")
+                .WithPassword("selenium")
                 .Login();
 
-            Assert.IsTrue(DashBoardPage.IsAt, "Failed to login");
+            // check if are able to login
+            //Assert.IsTrue(DashBoardPage.IsAt, "Failed to login");
         }
 
         [TestCleanup]
         public void CleanUp()
         {
-
+            Driver.CleanUp();
         }
     }
 }
