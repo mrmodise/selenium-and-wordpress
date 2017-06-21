@@ -33,12 +33,15 @@ namespace WordPressAutomation
          */
         public void Login()
         {
+            // locate username field, enter username and submit
             var loginInput = Driver.Instance.FindElement(By.Id("user_login"));
             loginInput.SendKeys(username);
 
+            // locate password field, enter password and submit
             var passwordInput = Driver.Instance.FindElement(By.Id("user_pass"));
             passwordInput.SendKeys(password);
 
+            // locate login button and click it
             var loginButton = Driver.Instance.FindElement(By.Id("wp-submit"));
             loginButton.Click();
             
