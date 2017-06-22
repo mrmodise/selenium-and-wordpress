@@ -1,19 +1,13 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WordPressAutomation;
 
 namespace WordPressTests
 {
-    
-    [TestClass]
-    public class CreatePostTests
-    {
-        [TestInitialize]
-        public void Initialize()
-        {
-            Driver.Initialize();
-        }
 
+    [TestClass]
+    public class CreatePostTests : WordPressBaseTest
+    {
+      
         [TestMethod]
         public void Can_Create_Basic_Post()
         {
@@ -41,12 +35,6 @@ namespace WordPressTests
 
             // check if the post has been created and that the title of the post equals the provided one
             Assert.AreEqual(PostPage.Title, "This is the Title", "Title did not match a new post");
-        }
-
-        [TestCleanup]
-        public void CleanUp()
-        {
-            Driver.Close();
         }
     }
 }

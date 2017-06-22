@@ -8,11 +8,6 @@ namespace WordPressTests
     [TestClass]
     public class PageTests
     {
-        [TestInitialize]
-        public void Initialize()
-        {
-            Driver.Initialize();
-        }
 
         [TestMethod]
         public void Can_Edit_Page()
@@ -38,12 +33,6 @@ namespace WordPressTests
 
             // verify we are at the page/post to edit
             Assert.AreEqual("Sample Page", NewPostPage.Title, "Title did not match");
-        }
-
-        [TestCleanup]
-        public void CleanUp()
-        {
-            Driver.Close();
         }
     }
 }

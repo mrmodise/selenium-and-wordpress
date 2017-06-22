@@ -5,13 +5,8 @@ using WordPressAutomation;
 namespace WordPressTests
 {
     [TestClass]
-    public class LoginPageTests
+    public class LoginPageTests : WordPressBaseTest
     {
-        [TestInitialize]
-        public void Initialize()
-        {
-            Driver.Initialize();
-        }
 
         [TestMethod]
         public void Admin_User_Can_Login()
@@ -28,12 +23,6 @@ namespace WordPressTests
 
             // check if are able to login
             Assert.IsTrue(DashBoardPage.IsAt, "Failed to login");
-        }
-
-        [TestCleanup]
-        public void CleanUp()
-        {
-           Driver.Close();
         }
     }
 }
