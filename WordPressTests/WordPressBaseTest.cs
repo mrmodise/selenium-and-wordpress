@@ -11,6 +11,16 @@ namespace WordPressTests
         {
             // initialize selenium driver
             Driver.Initialize();
+
+            // navigate to site under automation
+            LoginPage
+                .GoTo();
+
+            // test the login functionality
+            LoginPage
+                .LoginAs("selenium")
+                .WithPassword("selenium")
+                .Login();
         }
 
         [TestCleanup]

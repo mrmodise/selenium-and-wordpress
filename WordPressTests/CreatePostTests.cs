@@ -11,16 +11,6 @@ namespace WordPressTests
         [TestMethod]
         public void Can_Create_Basic_Post()
         {
-            // navigate to site under automation
-            LoginPage
-                .GoTo();
-
-            // test the login functionality
-            LoginPage
-                .LoginAs("selenium")
-                .WithPassword("selenium")
-                .Login();
-
             // navigate to the create post page
             NewPostPage.GoTo();
 

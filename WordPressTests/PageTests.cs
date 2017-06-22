@@ -12,16 +12,6 @@ namespace WordPressTests
         [TestMethod]
         public void Can_Edit_Page()
         {
-            // navigate to site under automation
-            LoginPage
-                .GoTo();
-
-            // test the login functionality
-            LoginPage
-                .LoginAs("selenium")
-                .WithPassword("selenium")
-                .Login();
-
             // navigate to the list post page
             ListPostPage.GoTo(PostType.Page);
 
