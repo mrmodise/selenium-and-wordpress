@@ -16,6 +16,9 @@ namespace WordPressAutomation
             get; set;
         }
 
+        // return base url
+        public static string BaseAddress { get { return "http://seleniumtests-com.stackstaging.com/"; } }
+
         // setup driver 
         public static void Initialize()
         {

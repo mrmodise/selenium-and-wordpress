@@ -1,9 +1,5 @@
-﻿using OpenQA.Selenium.Firefox;
+﻿using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WordPressAutomation
 {
@@ -11,7 +7,14 @@ namespace WordPressAutomation
     {
         public static void GoTo()
         {
-            Driver.Instance.Navigate().GoToUrl("http://seleniumtests-com.stackstaging.com/wp-login.php");
+            Driver.Instance.Navigate().GoToUrl(Driver.BaseAddress + "wp-login.php");
+
+            // wait 5 seconds 
+            var wait = new WebDriverWait(Driver.Instance, TimeSpan.FromSeconds(10));
+            wait.Until(d => d.SwitchTo().ActiveElement().GetAttribute("id") == "user_login");
+
+
+
         }
 
         public static LoginCommand LoginAs(string username)
