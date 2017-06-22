@@ -31,6 +31,12 @@ namespace WordPressTests
 
             // select page/post to select
             ListPostPage.SelectPost("Sample Page");
+
+            // verify edit mode
+            Assert.IsTrue(NewPostPage.IsInEditMode(), "Was not in edit mode");
+
+            // verify we are at the page/post to edit
+            Assert.AreEqual("Sample Page", NewPostPage.Title, "Title did not match");
         }
 
         [TestCleanup]
