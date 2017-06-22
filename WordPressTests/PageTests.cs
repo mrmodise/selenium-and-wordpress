@@ -15,7 +15,7 @@ namespace WordPressTests
         }
 
         [TestMethod]
-        public void Can_Create_Basic_Post()
+        public void Can_Edit_Page()
         {
             // navigate to site under automation
             LoginPage
