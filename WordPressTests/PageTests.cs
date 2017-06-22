@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WordPressAutomation;
+using static WordPressAutomation.ListPostPage;
 
 namespace WordPressTests
 {
