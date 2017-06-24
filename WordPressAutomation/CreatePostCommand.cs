@@ -1,5 +1,4 @@
-﻿using System;
-using WordPressAutomation;
+﻿using WordPressAutomation;
 using OpenQA.Selenium;
 using System.Threading;
 

@@ -9,16 +9,17 @@ namespace WordPressAutomation
             switch (postType)
             {
                 case PostType.Page:
-                    Driver.Instance.FindElement(By.Id("menu-pages")).Click();
-                    Driver.Instance.FindElement(By.Id("All Pages")).Click();
+                    var menuPosts = Driver.Instance.FindElement(By.Id("menu-posts"));
+                    menuPosts.Click();
+                    var allPosts = Driver.Instance.FindElement(By.LinkText("All Posts"));
+                    allPosts.Click();
                     break;
-
             }
         }
 
         public static void SelectPost(string title)
         {
-            var postLink = Driver.Instance.FindElement(By.LinkText("Sample Page"));
+            var postLink = Driver.Instance.FindElement(By.LinkText("Career"));
             postLink.Click();
         }
 
