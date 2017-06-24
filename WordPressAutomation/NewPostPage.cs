@@ -52,7 +52,7 @@ namespace WordPressTests
 
         public static bool IsInEditMode()
         {
-            return Driver.Instance.FindElement(By.Id("content_ifr")) != null;
+            return Driver.Instance.FindElement(By.Id("icon-edit-pages")) != null;
         }
     }
 }

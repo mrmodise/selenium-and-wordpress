@@ -1,11 +1,12 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WordPressAutomation;
 using static WordPressAutomation.ListPostPage;
 
 namespace WordPressTests
 {
     [TestClass]
-    public class PageTests: WordPressBaseTest
+    public class PageTests
     {
 
         [TestMethod]
@@ -15,13 +16,13 @@ namespace WordPressTests
             ListPostPage.GoTo(PostType.Page);
 
             // select page/post to select
-           ListPostPage.SelectPost("Career");
+            ListPostPage.SelectPost("Sample Page");
 
             // verify edit mode
-           Assert.IsTrue(NewPostPage.IsInEditMode(), "Was not in edit mode");
+            Assert.IsTrue(NewPostPage.IsInEditMode(), "Was not in edit mode");
 
             // verify we are at the page/post to edit
-            Assert.AreEqual("Career", NewPostPage.Title, "Title did not match");
+            Assert.AreEqual("Sample Page", NewPostPage.Title, "Title did not match");
         }
     }
 }
