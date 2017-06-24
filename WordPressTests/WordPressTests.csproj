@@ -52,6 +52,7 @@
     <Compile Include="PageTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CreatePostTests.cs" />
+    <Compile Include="WordPressBaseTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
