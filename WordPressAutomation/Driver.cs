@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using System;
+using System.Threading;
 
 namespace WordPressAutomation
 {
@@ -30,6 +31,11 @@ namespace WordPressAutomation
         {
             // close driver
             Instance.Close();
+        }
+
+        internal static void Wait(TimeSpan timeSpan)
+        {
+            Thread.Sleep((int) timeSpan.TotalSeconds * 1000);
         }
     }
 }

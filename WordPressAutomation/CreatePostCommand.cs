@@ -1,6 +1,7 @@
 ﻿using WordPressAutomation;
 using OpenQA.Selenium;
 using System.Threading;
+using System;
 
 namespace WordPressTests
 {
@@ -28,7 +29,7 @@ namespace WordPressTests
             Driver.Instance.SwitchTo().ActiveElement().SendKeys(body);
             Driver.Instance.SwitchTo().DefaultContent();
 
-            Thread.Sleep(1000);
+            Driver.Wait(TimeSpan.FromSeconds(1));
 
             Driver.Instance.FindElement(By.Id("publish")).Click();
         }
