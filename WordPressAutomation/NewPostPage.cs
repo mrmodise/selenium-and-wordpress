@@ -24,6 +24,9 @@ namespace WordPressTests
 
         public static void GoTo()
         {
+            //refactor: should we make a general menu navigation?
+            LeftNavigation.Posts.AddNew.Select();
+
             var menuPosts = Driver.Instance.FindElement(By.Id("menu-posts"));
             menuPosts.Click();
 
