@@ -24,7 +24,7 @@ namespace WordPressTests
             NewPostPage.GoToNewPost();
 
             // check if the post has been created and that the title of the post equals the provided one
-            Assert.AreEqual(PostPage.Title, "This is the Title", "Title did not match a new post");
+            Assert.AreEqual(PostPage.Title, "This is the post test title", "Title did not match a new post");
         }
     }
 }
