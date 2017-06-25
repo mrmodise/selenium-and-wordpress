@@ -5,7 +5,7 @@ using static WordPressAutomation.ListPostPage;
 namespace WordPressTests
 {
     [TestClass]
-    public class PageTests
+    public class PageTests: WordPressBaseTest
     {
 
         [TestMethod]
@@ -15,13 +15,13 @@ namespace WordPressTests
             ListPostPage.GoTo(PostType.Page);
 
             // select page/post to select
-            ListPostPage.SelectPost("Sample Page");
+            ListPostPage.SelectPost("Career");
 
             // verify edit mode
             Assert.IsTrue(NewPostPage.IsInEditMode(), "Was not in edit mode");
 
             // verify we are at the page/post to edit
-            Assert.AreEqual("Sample Page", NewPostPage.Title, "Title did not match");
+            Assert.AreEqual("Career", NewPostPage.Title, "Title did not match");
         }
     }
 }

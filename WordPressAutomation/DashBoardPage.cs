@@ -5,6 +5,9 @@ namespace WordPressTests
 {
     public static class DashBoardPage
     {
+        /**
+         * checks if the user is at the dashboard page
+         */
         public static bool IsAt
         {
             get

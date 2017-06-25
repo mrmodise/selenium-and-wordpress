@@ -22,16 +22,12 @@ namespace WordPressTests
             }
         }
 
+        /**
+         * 
+         */
         public static void GoTo()
         {
-            //refactor: should we make a general menu navigation?
             LeftNavigation.Posts.AddNew.Select();
-
-            var menuPosts = Driver.Instance.FindElement(By.Id("menu-posts"));
-            menuPosts.Click();
-
-            var addNew = Driver.Instance.FindElement(By.LinkText("Add New"));
-            addNew.Click();
         }
 
         /**
@@ -51,10 +47,12 @@ namespace WordPressTests
             var newPostLink = message.FindElements(By.TagName("a"))[0];
             newPostLink.Click();
         }
-
+        /**
+         * 
+         */
         public static bool IsInEditMode()
         {
-            return Driver.Instance.FindElement(By.Id("icon-edit-pages")) != null;
+            return Driver.Instance.FindElement(By.Id("content_ifr")) != null;
         }
     }
 }

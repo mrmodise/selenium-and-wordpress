@@ -16,7 +16,9 @@ namespace WordPressAutomation
         // return base url
         public static string BaseAddress { get { return "http://seleniumtests-com.stackstaging.com/"; } }
 
-        // setup driver 
+        /**
+         * Setup driver
+         */
         public static void Initialize()
         {
             // use firefox browser
@@ -26,14 +28,19 @@ namespace WordPressAutomation
             Instance.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
         }
 
-        // close driver when done with it
+        /**
+         * Close driver when done with it
+         */
         public static void Close()
         {
             // close driver
             Instance.Close();
         }
 
-        internal static void Wait(TimeSpan timeSpan)
+        /**
+         * sets the time for Selenium to keep trying to detect an element
+         */
+        public static void Wait(TimeSpan timeSpan)
         {
             Thread.Sleep((int) timeSpan.TotalSeconds * 1000);
         }
