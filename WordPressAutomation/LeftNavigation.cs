@@ -1,7 +1,56 @@
-﻿namespace WordPressTests
+﻿using OpenQA.Selenium;
+
+namespace WordPressAutomation
 {
     public class LeftNavigation
     {
-        public
+        public class MenuSelector
+        {
+            /**
+             * Selects a particular menu given the menu id and link text
+             */
+            public static void Select(string topLevelMenuId, string subMenuLinkText)
+            {
+                Driver.Instance.FindElement(By.Id(topLevelMenuId)).Click();
+                Driver.Instance.FindElement(By.LinkText(subMenuLinkText)).Click();
+            }
+        }
+
+        /**
+         * Selects left navigation menu link
+         */
+        public static void Select(string topLevelMenuId, string subMenuLinkText)
+        {
+            Driver.Instance.FindElement(By.Id(topLevelMenuId)).Click();
+            Driver.Instance.FindElement(By.Id(subMenuLinkText)).Click();
+        }
+
+        public class Posts
+        {
+            public class AddNew
+            {
+                /**
+                 * Selects link to add new post
+                 */
+                public static void Select()
+                {
+                    MenuSelector.Select("menu-posts", "Add New");
+                }
+            }
+        }
+
+        public class Pages
+        {
+            public class AllPages
+            {
+                /**
+                 * Select link to show all posts
+                 */
+                public static void Select()
+                {
+                    MenuSelector.Select("menu-posts", "All Posts");
+                }
+            }
+        }
     }
 }
