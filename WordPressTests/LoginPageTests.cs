@@ -5,7 +5,6 @@ namespace WordPressTests
     [TestClass]
     public class LoginPageTests : WordPressBaseTest
     {
-
         [TestMethod]
         public void Admin_User_Can_Login()
         {
