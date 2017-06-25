@@ -48,11 +48,11 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LoginPageTests.cs" />
-    <Compile Include="PageTests.cs" />
+    <Compile Include="Smoke Tests\LoginPageTests.cs" />
+    <Compile Include="Smoke Tests\PageTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CreatePostTests.cs" />
-    <Compile Include="WordPressBaseTest.cs" />
+    <Compile Include="Smoke Tests\CreatePostTests.cs" />
+    <Compile Include="Utils\WordPressBaseTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
