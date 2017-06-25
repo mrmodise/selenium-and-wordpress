@@ -4,6 +4,7 @@ namespace WordPressAutomation
 {
     public class LoginCommand
     {
+        // create username and password placeholders
         private readonly string username;
         private string password;
 
@@ -38,8 +39,7 @@ namespace WordPressAutomation
 
             // locate login button and click it
             var loginButton = Driver.Instance.FindElement(By.Id("wp-submit"));
-            loginButton.Click();
-            
+            loginButton.Click();    
         }
     }
 }
