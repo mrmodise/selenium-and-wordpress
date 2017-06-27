@@ -2,7 +2,6 @@
 using OpenQA.Selenium.Firefox;
 using System;
 using System.Threading;
-using System.Collections.ObjectModel;
 
 namespace WordPressAutomation
 {
