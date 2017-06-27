@@ -48,6 +48,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PostsTests\AllPostsTests.cs" />
     <Compile Include="Smoke Tests\LoginPageTests.cs" />
     <Compile Include="Smoke Tests\PageTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
