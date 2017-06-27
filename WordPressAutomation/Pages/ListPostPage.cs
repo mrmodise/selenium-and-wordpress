@@ -69,7 +69,7 @@ namespace WordPressAutomation
                 ReadOnlyCollection<IWebElement> links = null;
 
                 // retrive the links that match the provided title
-                links = row.FindElements(By.LinkText(title));
+                Driver.NoWait(() => links = row.FindElements(By.LinkText(title)));
 
                 if(links.Count > 0)
                 {

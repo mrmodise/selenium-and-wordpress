@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Firefox;
 using System;
 using System.Threading;
+using System.Collections.ObjectModel;
 
 namespace WordPressAutomation
 {
@@ -24,8 +25,7 @@ namespace WordPressAutomation
             // use firefox browser
             Instance = new FirefoxDriver();
 
-            // wait 5 seconds 
-            Instance.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            TurnOnWait();
         }
 
         /**
@@ -43,6 +43,25 @@ namespace WordPressAutomation
         public static void Wait(TimeSpan timeSpan)
         {
             Thread.Sleep((int) timeSpan.TotalSeconds * 1000);
+        }
+
+        internal static void NoWait(Action action)
+        {
+            TurnOffWait();
+            action();
+            TurnOnWait();
+        }
+
+        private static void TurnOnWait()
+        {
+            // wait 5 seconds 
+            Instance.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+        }
+
+        private static void TurnOffWait()
+        {
+            // wait 0 seconds 
+            Instance.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
         }
     }
 }
