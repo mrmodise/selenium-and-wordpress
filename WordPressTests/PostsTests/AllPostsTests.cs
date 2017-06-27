@@ -22,7 +22,7 @@ namespace WordPressTests.PostsTests
 
             // go to posts, get new post count
             ListPostPage.GoTo(PostType.Posts);
-            Assert.AreEqual(ListPostPage.PreviousPostCount + 1, ListPostPage.CurrentPostCount, "");
+            Assert.AreEqual(ListPostPage.PreviousPostCount + 1, ListPostPage.CurrentPostCount, "Post count did not match");
 
             // check for added post
             Assert.IsTrue(ListPostPage.DoesPostExistWithTitle("Added posts show up, title"));
