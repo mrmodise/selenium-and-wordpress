@@ -44,20 +44,20 @@ namespace WordPressAutomation
             Thread.Sleep((int) timeSpan.TotalSeconds * 1000);
         }
 
-        internal static void NoWait(Action action)
+        public static void NoWait(Action action)
         {
             TurnOffWait();
             action();
             TurnOnWait();
         }
 
-        private static void TurnOnWait()
+        public static void TurnOnWait()
         {
             // wait 5 seconds 
             Instance.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
         }
 
-        private static void TurnOffWait()
+        public static void TurnOffWait()
         {
             // wait 0 seconds 
             Instance.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
