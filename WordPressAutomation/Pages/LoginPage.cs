@@ -12,7 +12,7 @@ namespace WordPressAutomation
         {
             Driver.Instance.Navigate().GoToUrl(Driver.BaseAddress + "wp-login.php");
             // keep trying to detect username for 10 seconds
-            var wait = new WebDriverWait(Driver.Instance, TimeSpan.FromSeconds(10));
+            var wait = new WebDriverWait(Driver.Instance, TimeSpan.FromSeconds(1));
             wait.Until(d => d.SwitchTo().ActiveElement().GetAttribute("id") == "user_login");
         }
 
