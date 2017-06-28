@@ -24,7 +24,7 @@ namespace WordPressAutomation
             // use firefox browser
             Instance = new FirefoxDriver();
 
-            TurnOnWait();
+            //TurnOnWait();
         }
 
         /**

@@ -15,20 +15,17 @@ namespace WordPressTests.PostsTests
             ListPostPage.StoreCount();
 
             // add a new post
-            NewPostPage.GoTo();
-            NewPostPage.CreatePost("Added posts show up, title")
-                .WithBody("Added posts show up, body")
-                .Publish();
+            PostCreator.CreatePost();
 
             // go to posts, get new post count
             ListPostPage.GoTo(PostType.Posts);
             Assert.AreEqual(ListPostPage.PreviousPostCount + 1, ListPostPage.CurrentPostCount, "Post count did not match");
 
             // check for added post
-            Assert.IsTrue(ListPostPage.DoesPostExistWithTitle("Added posts show up, title"));
+            Assert.IsTrue(ListPostPage.DoesPostExistWithTitle(PostCreator.PreviousTitle));
 
             // delete post
-            ListPostPage.DeletePost("Added posts show up, title");
+            ListPostPage.DeletePost(PostCreator.PreviousTitle);
             Assert.AreEqual(ListPostPage.PreviousPostCount, ListPostPage.CurrentPostCount, "Could not delete post");
 
         }
@@ -36,23 +33,21 @@ namespace WordPressTests.PostsTests
         [TestMethod]
         public void Can_Search_Posts()
         {
-            // create new post
-            NewPostPage.GoTo();
-            NewPostPage.CreatePost("Searching posts, title")
-                .WithBody("Searching posts, body")
-                .Publish();
+
+            // add a new post
+            PostCreator.CreatePost();
 
             // go to list posts
             ListPostPage.GoTo(PostType.Posts);
 
             // search for post
-            ListPostPage.SearchForPost("Searching posts, title");
+            ListPostPage.SearchForPost(PostCreator.PreviousTitle);
 
             // check that post shows up in results
-            Assert.IsTrue(ListPostPage.DoesPostExistWithTitle("Search posts, title"));
+            Assert.IsTrue(ListPostPage.DoesPostExistWithTitle(PostCreator.PreviousTitle));
 
             // delete post
-            ListPostPage.DeletePost("Searching posts, title");
+            ListPostPage.DeletePost(PostCreator.PreviousTitle);
         }
     }
 }

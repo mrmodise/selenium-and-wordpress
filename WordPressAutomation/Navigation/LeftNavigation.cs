@@ -2,7 +2,7 @@
 
 namespace WordPressAutomation
 {
-    public partial class LeftNavigation
+    public class LeftNavigation
     {
         /**
          * Selects left navigation menu link
