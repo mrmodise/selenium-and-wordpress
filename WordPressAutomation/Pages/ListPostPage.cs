@@ -1,5 +1,4 @@
-﻿using System;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using System.Linq;
 using System.Collections.ObjectModel;
 using OpenQA.Selenium.Interactions;
