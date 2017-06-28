@@ -84,6 +84,18 @@ namespace WordPressAutomation
         }
 
         /**
+         *  Searches for a particular
+         */
+        public static void SearchForPost(string searchString)
+        {
+            var searchBox = Driver.Instance.FindElement(By.Id("post-search-input"));
+            searchBox.SendKeys(searchString);
+
+            var searchButton = Driver.Instance.FindElement(By.Id("search-submit"));
+            searchBox.Click();
+        }
+
+        /**
          * Keeps record of posts added
          */
         public static void StoreCount()

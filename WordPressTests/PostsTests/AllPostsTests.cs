@@ -32,5 +32,27 @@ namespace WordPressTests.PostsTests
             Assert.AreEqual(ListPostPage.PreviousPostCount, ListPostPage.CurrentPostCount, "Could not delete post");
 
         }
+
+        [TestMethod]
+        public void Can_Search_Posts()
+        {
+            // create new post
+            NewPostPage.GoTo();
+            NewPostPage.CreatePost("Searching posts, title")
+                .WithBody("Searching posts, body")
+                .Publish();
+
+            // go to list posts
+            ListPostPage.GoTo(PostType.Posts);
+
+            // search for post
+            ListPostPage.SearchForPost("Searching posts, title");
+
+            // check that post shows up in results
+            Assert.IsTrue(ListPostPage.DoesPostExistWithTitle("Search posts, title"));
+
+            // delete post
+            ListPostPage.DeletePost("Searching posts, title");
+        }
     }
 }
