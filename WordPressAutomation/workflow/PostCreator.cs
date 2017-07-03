@@ -7,6 +7,8 @@ namespace WordPressAutomation
     {
         public static string PreviousTitle { get; set; }
         public static string PreviousBody { get; set; }
+        public static bool CreatedPost { get { return !String.IsNullOrEmpty(PreviousTitle); } }
+
         private static string[] Words = new[] { "msanzi", "africa", "black", "programming", "programmer", "nonsense", "lucky", "Mandela", "Zuma", "Luther", "Modise", "Senior"};
         private static string[] Articles = new[] { "the", "an", "and", "a", "of", "to", "it", "as"};
 
@@ -21,6 +23,26 @@ namespace WordPressAutomation
             NewPostPage.CreatePost(PreviousTitle)
                 .WithBody(PreviousBody)
                 .Publish();
+        }
+
+        public static void Initialize()
+        {
+            PreviousTitle = null;
+            PreviousBody = null;
+        }
+
+        public static void CleanUp()
+        {
+            if (CreatedPost)
+            {
+                DeletePost();
+            }
+        }
+
+        private static void DeletePost()
+        {
+            ListPostPage.DeletePost(PreviousTitle);
+            Initialize();
         }
 
         private static string CreateBody()
