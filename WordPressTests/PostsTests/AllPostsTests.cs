@@ -2,7 +2,7 @@
 using WordPressAutomation;
 using static WordPressAutomation.ListPostPage;
 
-namespace WordPressTests.PostsTests
+namespace WordPressTests
 {
     [TestClass]
     public class AllPostsTests: WordPressBaseTest

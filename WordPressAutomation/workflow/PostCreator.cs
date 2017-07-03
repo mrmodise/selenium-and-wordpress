@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace WordPressTests.PostsTests
+namespace WordPressAutomation
 {
     public class PostCreator
     {

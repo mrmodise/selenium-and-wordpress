@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using WordPressAutomation;
 
-namespace WordPressTests
+namespace WordPressAutomation
 {
     public class NewPostPage
     {

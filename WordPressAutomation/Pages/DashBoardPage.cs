@@ -1,7 +1,7 @@
 ﻿using WordPressAutomation;
 using OpenQA.Selenium;
 
-namespace WordPressTests
+namespace WordPressAutomation
 {
     public static class DashBoardPage
     {

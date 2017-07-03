@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 using System.Threading;
 using System;
 
-namespace WordPressTests
+namespace WordPressAutomation
 {
     public class CreatePostCommand
     {

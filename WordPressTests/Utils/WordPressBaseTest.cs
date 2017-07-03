@@ -12,6 +12,8 @@ namespace WordPressTests
             // initialize selenium driver
             Driver.Initialize();
 
+            PostCreator.Initialize();
+
             // navigate to site under automation
             LoginPage
                 .GoTo();
@@ -26,6 +28,8 @@ namespace WordPressTests
         [TestCleanup]
         public void CleanUp()
         {
+            PostCreator.CleanUp();
+
             // close selenium driver
             Driver.Close();
         }
