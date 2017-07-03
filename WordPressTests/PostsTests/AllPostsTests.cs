@@ -10,15 +10,13 @@ namespace WordPressTests
         [TestMethod]
         public void Added_Posts_Show_Up()
         {
-            // go to posts, get post count and store
-            ListPostPage.GoTo(PostType.Posts);
+            // get post count and store
             ListPostPage.StoreCount();
 
             // add a new post
             PostCreator.CreatePost();
 
-            // go to posts, get new post count
-            ListPostPage.GoTo(PostType.Posts);
+            // get new post count
             Assert.AreEqual(ListPostPage.PreviousPostCount + 1, ListPostPage.CurrentPostCount, "Post count did not match");
 
             // check for added post
@@ -35,9 +33,6 @@ namespace WordPressTests
         {
             // add a new post
             PostCreator.CreatePost();
-
-            // go to list posts
-            ListPostPage.GoTo(PostType.Posts);
 
             // search for post
             ListPostPage.SearchForPost(PostCreator.PreviousTitle);

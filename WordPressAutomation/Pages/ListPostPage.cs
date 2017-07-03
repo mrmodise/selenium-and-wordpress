@@ -16,6 +16,28 @@ namespace WordPressAutomation
         // lists current post count
         public static object CurrentPostCount { get { return GetPostCount(); } }
 
+        // checks to see if we are at a particular post/page
+        public static bool IsAt
+        {
+            get
+            {
+                // collect all the h1 tags in the page
+                var h2s = Driver.Instance.FindElements(By.TagName("h1"));
+
+                // check if we found more than 1 h1 tags
+                if (h2s.Count > 0)
+                {
+                    // check if the 1st one has text posts
+                    return h2s[0].Text == "Posts";
+                }
+                else
+                {
+                    // if not we not at posts page
+                    return false;
+                }
+            }
+        }
+
         /**
          * Navigates to a post/page and show all posts
          */
@@ -87,6 +109,12 @@ namespace WordPressAutomation
          */
         public static void SearchForPost(string searchString)
         {
+            if (!IsAt)
+            {
+                // go to post
+                GoTo(PostType.Posts);
+            }
+
             var searchBox = Driver.Instance.FindElement(By.Id("post-search-input"));
             searchBox.SendKeys(searchString);
 

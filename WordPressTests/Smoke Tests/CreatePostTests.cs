@@ -11,9 +11,6 @@ namespace WordPressTests
         [TestMethod]
         public void Can_Create_Basic_Post()
         {
-            // navigate to the create post page
-            NewPostPage.GoTo();
-
             // create post contents - title, body
             NewPostPage
                 .CreatePost("This is the post test title")
