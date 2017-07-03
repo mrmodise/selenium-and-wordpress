@@ -1,5 +1,5 @@
-## Selenium and WordPress
-Building a UI automated testing framework with Selenium 3.4 for a WordPress site
+## Selenium, SpecFlow and WordPress
+Building a UI automated testing framework with Selenium 3.4 and SpecFlow for a WordPress site
 
 ### Overview
 This project sets to create an automated testing framework using Selenium with C#. The main goal is to have the tests only communicating
@@ -15,6 +15,9 @@ Download the Selenium FirefoxDriver from
 https://github.com/mozilla/geckodriver/releases. Add its location to the Windows OS system environment path,
  e.g. ``C:\apps\geckodriver.exe`` (no need to include the geckodriver.exe in the path). From within Visual Studio, 
  select a test and ``Run Tests``.
+ 
+### What's Next
+Integrate SpecFlow for improved readable business reports.
  
 ### Licence
 ````
