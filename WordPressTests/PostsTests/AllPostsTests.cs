@@ -33,7 +33,6 @@ namespace WordPressTests
         [TestMethod]
         public void Can_Search_Posts()
         {
-
             // add a new post
             PostCreator.CreatePost();
 
@@ -45,9 +44,6 @@ namespace WordPressTests
 
             // check that post shows up in results
             Assert.IsTrue(ListPostPage.DoesPostExistWithTitle(PostCreator.PreviousTitle));
-
-            // delete post
-            ListPostPage.DeletePost(PostCreator.PreviousTitle);
         }
     }
 }
